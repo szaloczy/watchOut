@@ -18,5 +18,11 @@ export const useWatchStore = create((set) => ({
         set((state) => ({ watches: [...state.watches, data.data ]}));
         return {success: true, msg:"Watch created successfully"};
     },
+
+    fetchWatches: async () => {
+        const res = await fetch("/api/watches");
+        const data = await res.json();
+        set({ watches: data.data });
+    }
 }));
 

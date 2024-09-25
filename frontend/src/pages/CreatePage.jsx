@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {Button, Container, VStack, Box, Heading, Input, useColorModeValue} from "@chakra-ui/react";
+import {Button, Container, VStack, Box, Heading, Input, useColorModeValue, useToast} from "@chakra-ui/react";
 import { useWatchStore } from '../store/watch';
 
 const CreatePage = () => {
@@ -10,12 +10,29 @@ const CreatePage = () => {
         image:"",
     });
 
+    const toast = useToast();
     const { createWatch } = useWatchStore();
+
     const handleAddWatch = async () => {
-       const { success, msg } = await createWatch(newWatch);
-       console.log("Success: ", success);
-       console.log("Message: ", msg);
-    };
+        const { success, msg } = await createWatch(newWatch);
+        if(!success){
+        toast({
+            title:"Error",
+            description:msg,
+            status: "error",
+            duration: 3000,
+            isClosable: true,
+        });
+        } else {
+            toast({
+                title: "Success",
+                description: msg,
+                status: "success",
+                isClosable: true,
+        });
+        }
+        setNewWatch({name: "", price: "", image: ""});
+    }; 
 
     return(
         <>
