@@ -18,8 +18,9 @@ const HomePage = () => {
                 <Text
                     fontSize={"30"}
                     fontWeight={"bold"}
-                    bgGradient={"linear(to-r, Cyan.400, blue.500)"}
+                    color={"blue.500"}
                     textAlign={"center"}    
+                    
                 >
                     List Of Watches
                 </Text>

@@ -3,6 +3,7 @@ import { create } from "zustand";
 export const useWatchStore = create((set) => ({
     watches: [],
     setWatches: (watches) => set({ watches }),
+
     createWatch: async (newWatch) => {
         if (!newWatch.name || !newWatch.price || !newWatch.image) {
             return {success: false, msg: "Please fill in all fields"}
@@ -23,6 +24,37 @@ export const useWatchStore = create((set) => ({
         const res = await fetch("/api/watches");
         const data = await res.json();
         set({ watches: data.data });
-    }
+    },
+    
+    deleteWatch: async (wid) => {
+        const res = await fetch(`/api/watches/${wid}`, {
+            method: "DELETE",
+        });
+        const data = await res.json();
+        if(!data.success) {
+            return {success: false, msg: data.msg};
+        }
+        //update the ui immediately, withour needing a refresh
+        set(state => ({ watches: state.watches.filter(watch => watch._id !== wid) }));
+        return { success: true, msg: data.msg };
+    },
+
+    updateWatch: async(wid, updatedWatch) => {
+        const res = await fetch(`/api/watches/${wid}`, {
+            method:"PUT",
+            headers:{"Content-Type":"application/json"},
+            body: JSON.stringify(updatedWatch),
+        });
+        const data = await res.json();
+        if(!data.success){
+            return { success: false, msg: data.msg};
+        }
+        //updating the ui, withour needing a refresh
+        set(state => ({
+            watches: state.watches.map((watch) => (watch._id === wid ? data.data : watch)),
+        }));
+
+        return { success: true, msg: data.msg }
+    },
 }));
 
