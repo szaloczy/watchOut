@@ -36,11 +36,14 @@ const CreatePage = () => {
 
     return(
         <>
-         <Container maxW={"container.sm"}>
+         <Container maxW={"container.sm"} 
+         fontFamily={"serif"}
+         >
             <VStack
                 spacing={8}
             >   
                 <Heading 
+                fontFamily={"serif"}
                  as={"h1"}
                  size={"2xl"} 
                  textAlign={"center"} 

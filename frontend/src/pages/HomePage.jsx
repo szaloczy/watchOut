@@ -1,58 +1,28 @@
-import React, {useEffect} from "react";
-import { Container, VStack, Text, SimpleGrid } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
-import { useWatchStore } from "../store/watch";
-import WatchCard from "../components/WatchCard.jsx";
+import React from "react";
+import introbg from "../assets/intro.webm";
+import WatchCollection from "../components/WatchItem";
 
 const HomePage = () => {
 
-    const { fetchWatches, watches } = useWatchStore();
-    useEffect(() => {
-        fetchWatches();
-    }, [fetchWatches]);
-    console.log("watches", watches);
-    
     return(
-        <Container maxW="container.xl" py={12}>
-            <VStack spacing={8}>  
-                <Text
-                    fontSize={"30"}
-                    fontWeight={"bold"}
-                    color={"blue.500"}
-                    textAlign={"center"}    
-                    
-                >
-                    List Of Watches
-                </Text>
+        <>
+        <div className={"intro-container"}>
+            <video src={introbg} autoPlay loop muted ></video>
+            <div className="intro-text">
+                Find your dream watch <br /> on the leading marketplace <br /> for luxury watches.
+            </div>
+        </div>
 
-                <SimpleGrid
-                    columns={{
-                        base: 1,
-                        md: 2,
-                        lg: 3,
-                    }}
-                    spacing={10}
-                    w={"full"}
-                >
-                    {watches.map((watch) => (
-                        <WatchCard key={watch._id} watch={watch}></WatchCard>
-                    ))}
-                </SimpleGrid>
+        <div className="introduction">
+            <h1>Üdvözöllek az Órák Világában!</h1>
+            <p>Ez az oldal bemutatja az órák funkcionalitását, és kiemeli a jelentős márkákat, mint például a Rolex, Orient, Cartier és Baum.</p>
+            <p>Az órák világa izgalmas és változatos. Minden időmérő mögött egyedi mechanizmus rejlik, amely precíz időmérésre és stílusos esztétikára képes.</p>
+            <p>Fedezd fel az alábbi táblázatot, hogy többet megtudj ezekről az órákról és működésükről!</p>
+        </div>
 
-                {watches.length === 0 && (
-                    <Text fontSize={"xl"} textAlign={"center"} fontWeight={"bold"} color="gray.500">
-                    No watches found {" "}
-                    <Link to={"/create"}>
-                        <Text as="span" color="blue.500" _hover={{textDecoration: "underline"}}>
-                            Create a watch
-                        </Text>
-                    </Link>
-                </Text>
-                )}
+        <WatchCollection></WatchCollection>
 
-            </VStack>
-        </Container>
-        
+        </>
     );
 }
 

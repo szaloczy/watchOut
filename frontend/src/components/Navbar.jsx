@@ -1,5 +1,5 @@
 import React from "react";
-import {Button, Container, Flex, HStack, Text, useColorMode} from "@chakra-ui/react";
+import {Button, Container, Flex, HStack, Text, useColorMode, Menu, MenuItem, MenuList} from "@chakra-ui/react";
 import { PlusSquareIcon } from "@chakra-ui/icons";
 import { Link } from "react-router-dom";
 import { IoMoon } from "react-icons/io5";
@@ -12,7 +12,7 @@ const { colorMode, toggleColorMode } = useColorMode();
 
     return(
       <>    
-        <Container maxW={"1140px"} px={4}>
+        <Container maxW={"1140px"} px={4} fontFamily={"serif"}>
           <Flex
           h={16}
           alignItems={"center"}
@@ -27,13 +27,53 @@ const { colorMode, toggleColorMode } = useColorMode();
               fontSize={{base: "22", sm: "28"}}
               fontWeight={"bold"}
               textAlign={"center"}
-              bgGradient={"linear(to-r, cyan.400, blue.500)"}
+              bgGradient={"linear(to-r, yellow.500, gray.500)"}
               bgClip={"text"}
             >
               <Link to={"/"}>WatchOut </Link>
             </Text>
 
-            <SearchBar></SearchBar>
+            <Container
+              display={"flex"}
+              gap={10}
+            >
+              <Link to={"/"}>
+                  <Text
+                     fontSize={{base: "13", sm: "15"}}
+                     fontWeight={"bold"}
+                     textTransform={"uppercase"}
+                     textAlign={"center"}
+                     bgGradient={"linear(to-r, yellow.500, gray.500)"}
+                     bgClip={"text"}
+                  >Home</Text>
+              </Link>
+                  <Text
+                  fontSize={{base: "13", sm: "15"}}
+                  fontWeight={"bold"}
+                  textTransform={"uppercase"}
+                  textAlign={"center"}
+                  bgGradient={"linear(to-r, yellow.500, gray.500)"}
+                  bgClip={"text"}
+                  >What's new</Text>
+              <Link to={"/watches"}>
+                  <Text
+                  fontSize={{base: "13", sm: "15"}}
+                  fontWeight={"bold"}
+                  textTransform={"uppercase"}
+                  textAlign={"center"}
+                  bgGradient={"linear(to-r, yellow.500, gray.500)"}
+                  bgClip={"text"}
+                  >Watches</Text>
+              </Link>
+                  <Text
+                  fontSize={{base: "13", sm: "15"}}
+                  fontWeight={"bold"}
+                  textTransform={"uppercase"}
+                  textAlign={"center"}
+                  bgGradient={"linear(to-r, yellow.500, gray.500)"}
+                  bgClip={"text"}
+                  >Videos</Text>
+            </Container>
             
             <HStack spacing={2} alignItems={"center"}>
               <Link to={"/create"}>

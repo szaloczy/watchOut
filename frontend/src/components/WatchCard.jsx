@@ -77,6 +77,7 @@ const WatchCard = ({ watch }) => {
 
   return (
     <Box
+
       shadow={"lg"}
       rounded={"lg"}
       overflow={"hidden"}
@@ -92,8 +93,10 @@ const WatchCard = ({ watch }) => {
         objectFit="cover"
       ></Image>
 
-      <Box p={4}>
-        <Heading as="h3" size="md" mb={2}>
+      <Box p={4} >
+        <Heading as="h3" size="md" mb={2}
+        fontFamily={"serif"}
+        >
           {watch.name}
         </Heading>
 
