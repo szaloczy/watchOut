@@ -6,6 +6,7 @@ import { IoMoon } from "react-icons/io5";
 import { LuSun } from "react-icons/lu";
 import SearchBar from "./SearchBar";
 
+
 const Navbar = () => {
 
 const { colorMode, toggleColorMode } = useColorMode();
@@ -45,7 +46,7 @@ const { colorMode, toggleColorMode } = useColorMode();
                      textAlign={"center"}
                      bgGradient={"linear(to-r, yellow.500, gray.500)"}
                      bgClip={"text"}
-                  >Home</Text>
+                  >Kezdőlap</Text>
               </Link>
                   <Text
                   fontSize={{base: "13", sm: "15"}}
@@ -54,7 +55,7 @@ const { colorMode, toggleColorMode } = useColorMode();
                   textAlign={"center"}
                   bgGradient={"linear(to-r, yellow.500, gray.500)"}
                   bgClip={"text"}
-                  >What's new</Text>
+                  >Újdonságok</Text>
               <Link to={"/watches"}>
                   <Text
                   fontSize={{base: "13", sm: "15"}}
@@ -63,7 +64,7 @@ const { colorMode, toggleColorMode } = useColorMode();
                   textAlign={"center"}
                   bgGradient={"linear(to-r, yellow.500, gray.500)"}
                   bgClip={"text"}
-                  >Watches</Text>
+                  >Órák</Text>
               </Link>
                   <Text
                   fontSize={{base: "13", sm: "15"}}
@@ -72,7 +73,7 @@ const { colorMode, toggleColorMode } = useColorMode();
                   textAlign={"center"}
                   bgGradient={"linear(to-r, yellow.500, gray.500)"}
                   bgClip={"text"}
-                  >Videos</Text>
+                  >Videók</Text>
             </Container>
             
             <HStack spacing={2} alignItems={"center"}>

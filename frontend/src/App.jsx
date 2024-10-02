@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
 import Watches from "./pages/Watches";
 
+
 function App() {
 
   return (

@@ -1,6 +1,7 @@
 import React from "react";
 import introbg from "../assets/intro.webm";
 import WatchCollection from "../components/WatchItem";
+import WatchItem2 from "../components/WatchItem2";
 
 const HomePage = () => {
 
@@ -21,6 +22,7 @@ const HomePage = () => {
         </div>
 
         <WatchCollection></WatchCollection>
+        <WatchItem2></WatchItem2>
 
         </>
     );
