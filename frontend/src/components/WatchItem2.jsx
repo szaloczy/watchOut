@@ -73,7 +73,7 @@ const WatchCollection = () => {
   return (
     <Box id="mov" m={5} fontFamily={"serif"}>
       <Flex justify="space-between" align="center" mb={6}>
-        <Heading fontFamily={"serif"} as="h2" size="xl" textAlign="center">
+        <Heading fontFamily={"serif"} color={"brown"} as="h2" size="xl" textAlign="center">
           Órák mozgás szerint
         </Heading>
       </Flex>
@@ -86,7 +86,7 @@ const WatchCollection = () => {
             borderRadius="lg"
             overflow="hidden"
             p={4}
-            bg={useColorModeValue('white', 'gray.700')} // Téma szerinti háttér
+            bg={"white"} 
             boxShadow="md"
             transition="transform 0.2s"
             _hover={{ transform: 'scale(1.02)' }}
@@ -98,14 +98,14 @@ const WatchCollection = () => {
               <Heading as="h3" size="md" mb={2}>
                 {watch.title}
               </Heading>
-              <Text  fontSize="18px" color="red.600" mb={2}>
+              <Text  fontSize="18px" color="red.800" mb={2}>
                 {watch.feature}
-                <Badge textTransform={"lowercase"} fontSize="16px">
+                <Badge textTransform={"lowercase"} color={"red.800"} fontSize="16px">
                   {watch.featureHighlight}
                 </Badge>
               </Text>
               <Box>
-                <UnorderedList spacing={1} fontSize={"14px"}>
+                <UnorderedList spacing={1} color={"black"} fontSize={"14px"}>
                   {watch.details.map((detail, i) => (
                     <ListItem key={i}>{detail}</ListItem>
                   ))}

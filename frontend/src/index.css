@@ -14,7 +14,7 @@
 .intro-text{
     position: absolute;
     font-size: 1.6rem;
-    color: white;
+    color: rgba(240, 235, 233, 0.934);
     margin-left: 50px;
 }
 
@@ -25,11 +25,16 @@ video{
 }
 
 .introduction {
-    background-color: #f9f9f9;
+    background: linear-gradient(to right, rgb(212, 63, 30), rgb(105, 104, 104));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 20px;
     text-align: center;
+    font-size: 1.1rem;
 }
 
 .introduction h1 {

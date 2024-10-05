@@ -19,7 +19,7 @@ const Watches = () => {
                     
                     fontSize={"30"}
                     fontWeight={"bold"}
-                    color={"blue.500"}
+                    color={"brown"}
                     textAlign={"center"}    
                     
                 >

@@ -108,7 +108,7 @@ const WatchCard = ({ watch }) => {
           <IconButton 
             icon={<EditIcon />} 
             onClick={onOpen }
-            colorScheme="blue"></IconButton>
+            backgroundColor={"brown"}></IconButton>
           <IconButton
             icon={<DeleteIcon />}
             onClick={() => handleDeleteWatch(watch._id)}
@@ -152,7 +152,7 @@ const WatchCard = ({ watch }) => {
 
                   <ModalFooter>
                     <Button 
-                    colorScheme="blue" 
+                    backgroundColor={"brown"}
                     mr={3} 
                     onClick={() => handleUpdateWatch(watch._id, updatedWatch)}
                     >

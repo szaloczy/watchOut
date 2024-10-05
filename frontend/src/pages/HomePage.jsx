@@ -9,9 +9,6 @@ const HomePage = () => {
         <>
         <div className={"intro-container"}>
             <video src={introbg} autoPlay loop muted ></video>
-            <div className="intro-text">
-                Find your dream watch <br /> on the leading marketplace <br /> for luxury watches.
-            </div>
         </div>
 
         <div className="introduction">
