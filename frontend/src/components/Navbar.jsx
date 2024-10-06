@@ -56,6 +56,16 @@ const { colorMode, toggleColorMode } = useColorMode();
                   bgClip={"text"}
                   >Újdonságok</Text>
                 </Link>
+              <Link to={"/blog"}>
+                  <Text
+                  fontSize={{base: "13", sm: "15"}}
+                  fontWeight={"bold"}
+                  textTransform={"uppercase"}
+                  textAlign={"center"}
+                  bgGradient={"linear(to-r, red.500, gray.500)"}
+                  bgClip={"text"}
+                  >Brands</Text>
+              </Link>
               <Link to={"/watches"}>
                   <Text
                   fontSize={{base: "13", sm: "15"}}
@@ -65,16 +75,6 @@ const { colorMode, toggleColorMode } = useColorMode();
                   bgGradient={"linear(to-r, red.500, gray.500)"}
                   bgClip={"text"}
                   >Órák</Text>
-              </Link>
-              <Link to={"/blog"}>
-                  <Text
-                  fontSize={{base: "13", sm: "15"}}
-                  fontWeight={"bold"}
-                  textTransform={"uppercase"}
-                  textAlign={"center"}
-                  bgGradient={"linear(to-r, red.500, gray.500)"}
-                  bgClip={"text"}
-                  >Blog</Text>
               </Link>
             </Container>
             
