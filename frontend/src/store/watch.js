@@ -6,7 +6,7 @@ export const useWatchStore = create((set) => ({
 
     createWatch: async (newWatch) => {
         if (!newWatch.name || !newWatch.price || !newWatch.image) {
-            return {success: false, msg: "Please fill in all fields"}
+            return {success: false, msg: "Please fill fields"}
         }
         const res = await fetch("/api/watches", {
             method:"POST",
@@ -34,7 +34,6 @@ export const useWatchStore = create((set) => ({
         if(!data.success) {
             return {success: false, msg: data.msg};
         }
-        //update the ui immediately, withour needing a refresh
         set(state => ({ watches: state.watches.filter(watch => watch._id !== wid) }));
         return { success: true, msg: data.msg };
     },
@@ -49,7 +48,7 @@ export const useWatchStore = create((set) => ({
         if(!data.success){
             return { success: false, msg: data.msg};
         }
-        //updating the ui, withour needing a refresh
+        
         set(state => ({
             watches: state.watches.map((watch) => (watch._id === wid ? data.data : watch)),
         }));

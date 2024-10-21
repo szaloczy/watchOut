@@ -53,7 +53,7 @@ const CreatePage = () => {
 
                 <Box
                  w={"full"}
-                 bg={useColorModeValue("white", "gray.800")} // Switches between white for light mode and gray.800 for dark mode
+                 bg={useColorModeValue("white", "gray.800")} 
                  p={6}
                  rounded={"lg"}
                  shadow={"md"}

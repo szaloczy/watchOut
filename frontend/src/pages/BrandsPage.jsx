@@ -1,5 +1,4 @@
 import { Box, Heading, SimpleGrid, Image, Text, Stack, Badge, Grid, Center, Divider } from "@chakra-ui/react";
-import { IoSwapHorizontal } from "react-icons/io5";
 
 const watchData = [
   {
@@ -16,7 +15,6 @@ const watchData = [
     picked: "https://www.shutterstock.com/shutterstock/photos/2503744099/display_1500/stock-photo-munich-germany-july-an-omega-speedmaster-moonswatch-is-showcased-in-the-display-2503744099.jpg",
     description: "Discover the legendary Speedmaster collection, OMEGA's esteemed line of luxury, Swiss‑made watches. With a rich heritage in space exploration, the Speedmaster boasts unparalleled precision and style, with diverse models that each offer distinct features and designs. Unravel the captivating history behind these iconic timepieces and find your perfect Speedmaster watch – a famous mark of true horological excellence."
   },
-  // Add more brands here
 ];
 
 const BrandsPage = () => {
@@ -36,7 +34,7 @@ const BrandsPage = () => {
                 key={idx}
                 overflow="hidden"
                 transition="transform 0.3s ease"
-                _hover={{ transform: "scale(1.1)" }} // Scaling effect
+                _hover={{ transform: "scale(1.1)" }}
               >
                 <Image 
                   src={image} 

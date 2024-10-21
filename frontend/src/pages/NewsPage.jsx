@@ -4,14 +4,13 @@ import { Box, Image, Text, Grid, GridItem, Link } from '@chakra-ui/react';
 const ArticleItem = ({ title, description, image, author, date, link }) => {
   return (
     <Grid templateColumns={{ base: "1fr", md: "2fr 3fr" }} gap={6} mb={10}>
-      {/* Kép */}
+      
       <GridItem>
         <Link href={link} isExternal>
           <Image src={image} alt={title} borderRadius="md" objectFit="cover" />
         </Link>
       </GridItem>
 
-      {/* Szöveges tartalom */}
       <GridItem>
         <Link href={link} isExternal>
           <Text as="h3" fontSize="2xl" fontWeight="bold" mb={2}>
@@ -32,7 +31,6 @@ const ArticleItem = ({ title, description, image, author, date, link }) => {
 const NewsPage = () => {
   return (
     <Box p={6}>
-      {/* Cikkek listája */}
       <ArticleItem
         title="Hozzáférés egy Omega Speedmasterhez, Heuer Carrerahoz és egy CL Guinand zsebórához az Olimpiai Klub számára"
         description="Mindez és még egyebek is megtalálhatók a Hodinkee legújabb, 'Miért érdekli az embereket' rovatában."
